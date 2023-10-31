@@ -14,8 +14,10 @@ export class CakeShop {
         this.ovens.push(oven);
     }
 
-    sellCake(cake: Cake): void {
-        this.income += cake.getPrice();
+    sellCake(cake: Cake | null): void {
+        if (cake) {
+            this.income += cake.getPrice();
+        }
     }
 
     getIncome(): number {
